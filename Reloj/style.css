@@ -1,0 +1,95 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+}
+
+body{
+    background: linear-gradient(to right, rgb(0, 0, 255), rgb(128, 0, 128));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.reloj{
+    width: 800px;
+    height: 800px;
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 50%;
+    border: 2px solid black;
+    position: relative;
+}
+
+.reloj .numero{
+    --rotacion: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotacion));
+    font-size: 3.5rem;
+}
+
+.reloj .numero1{ --rotacion: 30deg }
+
+.reloj .numero2{ --rotacion: 60deg }
+
+.reloj .numero3{ --rotacion: 90deg }
+
+.reloj .numero4{ --rotacion: 120deg }
+
+.reloj .numero5{ --rotacion: 150deg }
+
+.reloj .numero6{ --rotacion: 180deg }
+
+.reloj .numero7{ --rotacion: 210deg }
+
+.reloj .numero8{ --rotacion: 240deg }
+
+.reloj .numero9{ --rotacion: 270deg }
+
+.reloj .numero10{ --rotacion: 300deg }
+
+.reloj .numero11{ --rotacion: 330deg }
+
+.reloj .manecilla{
+    --rotacion: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom;
+    z-index: 10;
+    transform: translateX(-50%) rotate(calc(var(--rotacion) * 1deg));
+}
+
+.reloj::after{
+    content: '';
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.reloj .manecilla.segundo{
+    width: 6px;
+    height: 45%;
+    background-color: blue;
+}
+.reloj .manecilla.minuto{
+    width: 14px;
+    height: 40%;
+    background-color: purple;
+}
+.reloj .manecilla.hora{
+    width: 20px;
+    height: 35%;
+    background-color: purple;
+}
